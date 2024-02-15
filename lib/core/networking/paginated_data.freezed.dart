@@ -12,7 +12,7 @@ part of 'paginated_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PaginatedData<T> {
@@ -63,22 +63,22 @@ class _$PaginatedDataCopyWithImpl<T, $Res, $Val extends PaginatedData<T>>
 }
 
 /// @nodoc
-abstract class _$$_PaginatedDataCopyWith<T, $Res>
+abstract class _$$PaginatedDataImplCopyWith<T, $Res>
     implements $PaginatedDataCopyWith<T, $Res> {
-  factory _$$_PaginatedDataCopyWith(
-          _$_PaginatedData<T> value, $Res Function(_$_PaginatedData<T>) then) =
-      __$$_PaginatedDataCopyWithImpl<T, $Res>;
+  factory _$$PaginatedDataImplCopyWith(_$PaginatedDataImpl<T> value,
+          $Res Function(_$PaginatedDataImpl<T>) then) =
+      __$$PaginatedDataImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call({List<T> data, bool isNextPageAvailable});
 }
 
 /// @nodoc
-class __$$_PaginatedDataCopyWithImpl<T, $Res>
-    extends _$PaginatedDataCopyWithImpl<T, $Res, _$_PaginatedData<T>>
-    implements _$$_PaginatedDataCopyWith<T, $Res> {
-  __$$_PaginatedDataCopyWithImpl(
-      _$_PaginatedData<T> _value, $Res Function(_$_PaginatedData<T>) _then)
+class __$$PaginatedDataImplCopyWithImpl<T, $Res>
+    extends _$PaginatedDataCopyWithImpl<T, $Res, _$PaginatedDataImpl<T>>
+    implements _$$PaginatedDataImplCopyWith<T, $Res> {
+  __$$PaginatedDataImplCopyWithImpl(_$PaginatedDataImpl<T> _value,
+      $Res Function(_$PaginatedDataImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_PaginatedDataCopyWithImpl<T, $Res>
     Object? data = null,
     Object? isNextPageAvailable = null,
   }) {
-    return _then(_$_PaginatedData<T>(
+    return _then(_$PaginatedDataImpl<T>(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_PaginatedDataCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_PaginatedData<T> extends _PaginatedData<T> {
-  const _$_PaginatedData(
+class _$PaginatedDataImpl<T> extends _PaginatedData<T> {
+  const _$PaginatedDataImpl(
       {required final List<T> data, required this.isNextPageAvailable})
       : _data = data,
         super._();
@@ -125,10 +125,10 @@ class _$_PaginatedData<T> extends _PaginatedData<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PaginatedData<T> &&
+            other is _$PaginatedDataImpl<T> &&
             const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.isNextPageAvailable, isNextPageAvailable) ||
                 other.isNextPageAvailable == isNextPageAvailable));
@@ -141,14 +141,15 @@ class _$_PaginatedData<T> extends _PaginatedData<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PaginatedDataCopyWith<T, _$_PaginatedData<T>> get copyWith =>
-      __$$_PaginatedDataCopyWithImpl<T, _$_PaginatedData<T>>(this, _$identity);
+  _$$PaginatedDataImplCopyWith<T, _$PaginatedDataImpl<T>> get copyWith =>
+      __$$PaginatedDataImplCopyWithImpl<T, _$PaginatedDataImpl<T>>(
+          this, _$identity);
 }
 
 abstract class _PaginatedData<T> extends PaginatedData<T> {
   const factory _PaginatedData(
       {required final List<T> data,
-      required final bool isNextPageAvailable}) = _$_PaginatedData<T>;
+      required final bool isNextPageAvailable}) = _$PaginatedDataImpl<T>;
   const _PaginatedData._() : super._();
 
   @override
@@ -157,6 +158,6 @@ abstract class _PaginatedData<T> extends PaginatedData<T> {
   bool get isNextPageAvailable;
   @override
   @JsonKey(ignore: true)
-  _$$_PaginatedDataCopyWith<T, _$_PaginatedData<T>> get copyWith =>
+  _$$PaginatedDataImplCopyWith<T, _$PaginatedDataImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'enums.dart';
+import 'theme_manager/dark_theme.dart';
+import 'theme_manager/light_theme.dart';
 
 extension EmptyPadding on num {
   SizedBox get ph => SizedBox(
@@ -35,3 +37,17 @@ extension FontFamilyTypeExtension on FontFamilyType {
     }
   }
 }
+
+extension ThemeEnumExtension on ThemeEnum {
+  ThemeData get generateTheme {
+    switch (this) {
+      case ThemeEnum.LIGHT:
+        return ThemeLight.instance.theme!;
+      case ThemeEnum.DARK:
+        return ThemeDark.instance.theme!;
+      default:
+        return ThemeLight.instance.theme!;
+    }
+  }
+}
+

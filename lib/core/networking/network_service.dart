@@ -49,7 +49,7 @@ class RemoteService {
 
   RemoteService(this._dio) {
     _dio
-      ..options.connectTimeout = Duration(milliseconds: 1000)
+      ..options.connectTimeout = const Duration(milliseconds: 1000)
       ..options.headers.addAll({'Accept': 'application/json'})
       ..options.responseType = ResponseType.plain
       ..interceptors.add(AuthInterceptor())
@@ -102,14 +102,14 @@ class RemoteService {
         return RemoteResponse.failure(
             responseData['message'], responseData['Status']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       logger.e("Error log");
       logger.e("Post Method Error");
       logger.e("Error: ${e.message}");
-      if (e.isNoInternet) {
+      if (e.isNoInternet || e.isConnectionError || e.isConnectionTimeOut) {
         return const RemoteResponse.noConnection();
       } else {
-        return RemoteResponse.failure(e.message!, 0);
+        return RemoteResponse.failure(e.message!, "0");
       }
     }
   }
@@ -160,14 +160,14 @@ class RemoteService {
         return RemoteResponse.failure(
             responseData['message'], responseData['Status']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       logger.e("Error log");
       logger.e("Patch Method Error");
       logger.e("Error: ${e.message}");
-      if (e.isNoInternet) {
+      if (e.isNoInternet || e.isConnectionError || e.isConnectionTimeOut) {
         return const RemoteResponse.noConnection();
       } else {
-        return RemoteResponse.failure(e.message!, 0);
+        return RemoteResponse.failure(e.message!, "0");
       }
     }
   }
@@ -218,14 +218,14 @@ class RemoteService {
         return RemoteResponse.failure(
             responseData['message'], responseData['Status']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       logger.e("Error log");
       logger.e("Put Method Error");
       logger.e("Error: ${e.message}");
-      if (e.isNoInternet) {
+      if (e.isNoInternet || e.isConnectionError || e.isConnectionTimeOut) {
         return const RemoteResponse.noConnection();
       } else {
-        return RemoteResponse.failure(e.message!, 0);
+        return RemoteResponse.failure(e.message!, "0");
       }
     }
   }
@@ -272,14 +272,14 @@ class RemoteService {
         return RemoteResponse.failure(
             responseData['message'], responseData['Status']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       logger.e("Error log");
       logger.e("Get Method Error");
       logger.e("Error: ${e.message}");
-      if (e.isNoInternet) {
+      if (e.isNoInternet || e.isConnectionError || e.isConnectionTimeOut) {
         return const RemoteResponse.noConnection();
       } else {
-        return RemoteResponse.failure(e.message!, 0);
+        return RemoteResponse.failure(e.message!, "0");
       }
     }
   }
@@ -327,14 +327,15 @@ class RemoteService {
         return RemoteResponse.failure(
             responseData['message'], responseData['Status']);
       }
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       logger.e("Error log");
       logger.e("Delete Method Error");
       logger.e("Error: ${e.message}");
-      if (e.isNoInternet) {
+      if (e.isNoInternet || e.isConnectionError || e.isConnectionTimeOut) {
         return const RemoteResponse.noConnection();
-      } else {
-        return RemoteResponse.failure(e.message!, 0);
+      }
+      else {
+        return RemoteResponse.failure(e.message!, "0");
       }
     }
   }
@@ -395,8 +396,19 @@ class RemoteService {
   }
 }
 
-extension NoInternet on DioError {
+extension NoInternet on DioException {
   /// Returns `true` if the error is [SocketException].
   bool get isNoInternet =>
-      type == DioErrorType.unknown && error is SocketException;
+      type == DioExceptionType.unknown && error is SocketException;
+}
+extension ConnectionTimeOut on DioException {
+  /// Returns `true` if the error is [SocketException].
+  bool get isConnectionTimeOut =>
+      type == DioExceptionType.connectionTimeout && error is SocketException;
+}
+
+extension ConnectionError on DioException {
+  /// Returns `true` if the error is [SocketException].
+  bool get isConnectionError =>
+      type == DioExceptionType.connectionError && error is SocketException;
 }

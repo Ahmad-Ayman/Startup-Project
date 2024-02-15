@@ -7,3 +7,5 @@ enum FontFamilyType {
 }
 
 enum PageStates { error, noData, noInternet }
+
+enum ThemeEnum { DARK, LIGHT }

@@ -12,28 +12,28 @@ part of 'remote_response.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$RemoteResponse<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noConnection,
-    required TResult Function(String message, int status) failure,
+    required TResult Function(String message, String code) failure,
     required TResult Function(T data) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noConnection,
-    TResult? Function(String message, int status)? failure,
+    TResult? Function(String message, String code)? failure,
     TResult? Function(T data)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noConnection,
-    TResult Function(String message, int status)? failure,
+    TResult Function(String message, String code)? failure,
     TResult Function(T data)? data,
     required TResult orElse(),
   }) =>
@@ -81,25 +81,25 @@ class _$RemoteResponseCopyWithImpl<T, $Res, $Val extends RemoteResponse<T>>
 }
 
 /// @nodoc
-abstract class _$$_NoConnectionCopyWith<T, $Res> {
-  factory _$$_NoConnectionCopyWith(
-          _$_NoConnection<T> value, $Res Function(_$_NoConnection<T>) then) =
-      __$$_NoConnectionCopyWithImpl<T, $Res>;
+abstract class _$$NoConnectionImplCopyWith<T, $Res> {
+  factory _$$NoConnectionImplCopyWith(_$NoConnectionImpl<T> value,
+          $Res Function(_$NoConnectionImpl<T>) then) =
+      __$$NoConnectionImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$_NoConnectionCopyWithImpl<T, $Res>
-    extends _$RemoteResponseCopyWithImpl<T, $Res, _$_NoConnection<T>>
-    implements _$$_NoConnectionCopyWith<T, $Res> {
-  __$$_NoConnectionCopyWithImpl(
-      _$_NoConnection<T> _value, $Res Function(_$_NoConnection<T>) _then)
+class __$$NoConnectionImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$NoConnectionImpl<T>>
+    implements _$$NoConnectionImplCopyWith<T, $Res> {
+  __$$NoConnectionImplCopyWithImpl(
+      _$NoConnectionImpl<T> _value, $Res Function(_$NoConnectionImpl<T>) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NoConnection<T> extends _NoConnection<T> {
-  const _$_NoConnection() : super._();
+class _$NoConnectionImpl<T> extends _NoConnection<T> {
+  const _$NoConnectionImpl() : super._();
 
   @override
   String toString() {
@@ -107,9 +107,9 @@ class _$_NoConnection<T> extends _NoConnection<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NoConnection<T>);
+        (other.runtimeType == runtimeType && other is _$NoConnectionImpl<T>);
   }
 
   @override
@@ -119,7 +119,7 @@ class _$_NoConnection<T> extends _NoConnection<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noConnection,
-    required TResult Function(String message, int status) failure,
+    required TResult Function(String message, String code) failure,
     required TResult Function(T data) data,
   }) {
     return noConnection();
@@ -129,7 +129,7 @@ class _$_NoConnection<T> extends _NoConnection<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noConnection,
-    TResult? Function(String message, int status)? failure,
+    TResult? Function(String message, String code)? failure,
     TResult? Function(T data)? data,
   }) {
     return noConnection?.call();
@@ -139,7 +139,7 @@ class _$_NoConnection<T> extends _NoConnection<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noConnection,
-    TResult Function(String message, int status)? failure,
+    TResult Function(String message, String code)? failure,
     TResult Function(T data)? data,
     required TResult orElse(),
   }) {
@@ -185,109 +185,109 @@ class _$_NoConnection<T> extends _NoConnection<T> {
 }
 
 abstract class _NoConnection<T> extends RemoteResponse<T> {
-  const factory _NoConnection() = _$_NoConnection<T>;
+  const factory _NoConnection() = _$NoConnectionImpl<T>;
   const _NoConnection._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_FailureCopyWith<T, $Res> {
-  factory _$$_FailureCopyWith(
-          _$_Failure<T> value, $Res Function(_$_Failure<T>) then) =
-      __$$_FailureCopyWithImpl<T, $Res>;
+abstract class _$$FailureImplCopyWith<T, $Res> {
+  factory _$$FailureImplCopyWith(
+          _$FailureImpl<T> value, $Res Function(_$FailureImpl<T>) then) =
+      __$$FailureImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({String message, int status});
+  $Res call({String message, String code});
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<T, $Res>
-    extends _$RemoteResponseCopyWithImpl<T, $Res, _$_Failure<T>>
-    implements _$$_FailureCopyWith<T, $Res> {
-  __$$_FailureCopyWithImpl(
-      _$_Failure<T> _value, $Res Function(_$_Failure<T>) _then)
+class __$$FailureImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$FailureImpl<T>>
+    implements _$$FailureImplCopyWith<T, $Res> {
+  __$$FailureImplCopyWithImpl(
+      _$FailureImpl<T> _value, $Res Function(_$FailureImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = null,
-    Object? status = null,
+    Object? code = null,
   }) {
-    return _then(_$_Failure<T>(
+    return _then(_$FailureImpl<T>(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as int,
+      null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Failure<T> extends _Failure<T> {
-  const _$_Failure(this.message, this.status) : super._();
+class _$FailureImpl<T> extends _Failure<T> {
+  const _$FailureImpl(this.message, this.code) : super._();
 
   @override
   final String message;
   @override
-  final int status;
+  final String code;
 
   @override
   String toString() {
-    return 'RemoteResponse<$T>.failure(message: $message, status: $status)';
+    return 'RemoteResponse<$T>.failure(message: $message, code: $code)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Failure<T> &&
+            other is _$FailureImpl<T> &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.code, code) || other.code == code));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, status);
+  int get hashCode => Object.hash(runtimeType, message, code);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FailureCopyWith<T, _$_Failure<T>> get copyWith =>
-      __$$_FailureCopyWithImpl<T, _$_Failure<T>>(this, _$identity);
+  _$$FailureImplCopyWith<T, _$FailureImpl<T>> get copyWith =>
+      __$$FailureImplCopyWithImpl<T, _$FailureImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noConnection,
-    required TResult Function(String message, int status) failure,
+    required TResult Function(String message, String code) failure,
     required TResult Function(T data) data,
   }) {
-    return failure(message, status);
+    return failure(message, code);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noConnection,
-    TResult? Function(String message, int status)? failure,
+    TResult? Function(String message, String code)? failure,
     TResult? Function(T data)? data,
   }) {
-    return failure?.call(message, status);
+    return failure?.call(message, code);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noConnection,
-    TResult Function(String message, int status)? failure,
+    TResult Function(String message, String code)? failure,
     TResult Function(T data)? data,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(message, status);
+      return failure(message, code);
     }
     return orElse();
   }
@@ -328,30 +328,32 @@ class _$_Failure<T> extends _Failure<T> {
 }
 
 abstract class _Failure<T> extends RemoteResponse<T> {
-  const factory _Failure(final String message, final int status) =
-      _$_Failure<T>;
+  const factory _Failure(final String message, final String code) =
+      _$FailureImpl<T>;
   const _Failure._() : super._();
 
   String get message;
-  int get status;
+  String get code;
   @JsonKey(ignore: true)
-  _$$_FailureCopyWith<T, _$_Failure<T>> get copyWith =>
+  _$$FailureImplCopyWith<T, _$FailureImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DataCopyWith<T, $Res> {
-  factory _$$_DataCopyWith(_$_Data<T> value, $Res Function(_$_Data<T>) then) =
-      __$$_DataCopyWithImpl<T, $Res>;
+abstract class _$$DataImplCopyWith<T, $Res> {
+  factory _$$DataImplCopyWith(
+          _$DataImpl<T> value, $Res Function(_$DataImpl<T>) then) =
+      __$$DataImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$_DataCopyWithImpl<T, $Res>
-    extends _$RemoteResponseCopyWithImpl<T, $Res, _$_Data<T>>
-    implements _$$_DataCopyWith<T, $Res> {
-  __$$_DataCopyWithImpl(_$_Data<T> _value, $Res Function(_$_Data<T>) _then)
+class __$$DataImplCopyWithImpl<T, $Res>
+    extends _$RemoteResponseCopyWithImpl<T, $Res, _$DataImpl<T>>
+    implements _$$DataImplCopyWith<T, $Res> {
+  __$$DataImplCopyWithImpl(
+      _$DataImpl<T> _value, $Res Function(_$DataImpl<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -359,7 +361,7 @@ class __$$_DataCopyWithImpl<T, $Res>
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$_Data<T>(
+    return _then(_$DataImpl<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -370,8 +372,8 @@ class __$$_DataCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_Data<T> extends _Data<T> {
-  const _$_Data(this.data) : super._();
+class _$DataImpl<T> extends _Data<T> {
+  const _$DataImpl(this.data) : super._();
 
   @override
   final T data;
@@ -382,10 +384,10 @@ class _$_Data<T> extends _Data<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Data<T> &&
+            other is _$DataImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -396,14 +398,14 @@ class _$_Data<T> extends _Data<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DataCopyWith<T, _$_Data<T>> get copyWith =>
-      __$$_DataCopyWithImpl<T, _$_Data<T>>(this, _$identity);
+  _$$DataImplCopyWith<T, _$DataImpl<T>> get copyWith =>
+      __$$DataImplCopyWithImpl<T, _$DataImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() noConnection,
-    required TResult Function(String message, int status) failure,
+    required TResult Function(String message, String code) failure,
     required TResult Function(T data) data,
   }) {
     return data(this.data);
@@ -413,7 +415,7 @@ class _$_Data<T> extends _Data<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? noConnection,
-    TResult? Function(String message, int status)? failure,
+    TResult? Function(String message, String code)? failure,
     TResult? Function(T data)? data,
   }) {
     return data?.call(this.data);
@@ -423,7 +425,7 @@ class _$_Data<T> extends _Data<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? noConnection,
-    TResult Function(String message, int status)? failure,
+    TResult Function(String message, String code)? failure,
     TResult Function(T data)? data,
     required TResult orElse(),
   }) {
@@ -469,11 +471,11 @@ class _$_Data<T> extends _Data<T> {
 }
 
 abstract class _Data<T> extends RemoteResponse<T> {
-  const factory _Data(final T data) = _$_Data<T>;
+  const factory _Data(final T data) = _$DataImpl<T>;
   const _Data._() : super._();
 
   T get data;
   @JsonKey(ignore: true)
-  _$$_DataCopyWith<T, _$_Data<T>> get copyWith =>
+  _$$DataImplCopyWith<T, _$DataImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

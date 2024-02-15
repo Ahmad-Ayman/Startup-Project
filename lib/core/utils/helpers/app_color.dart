@@ -1,80 +1,62 @@
 import 'package:flutter/material.dart';
 
-class AppColor {
-  static const Color mainColor = Color(0xFF396F7B);
+class StaticColors {
+  StaticColors._();
+  static const darkTextColor = Colors.white;
+  static const lightTextColor = ColorTokens.tangaroa;
+  static const black2F4TextColor = ColorTokens.arapawa;
+  static const black1D1TextColor = Color(0xff1D1D35);
+  static const blueBlack192TextColor = ColorTokens.blackPearl;
+  static const greenTextColor = ColorTokens.shamrockGreen;
+  static const primaryColor = ColorTokens.shamrockGreen;
+  static const textfieldBorderColor = primaryColor;
+  static const separatorColor = ColorTokens.quartz;
+  static const grey808 = Color(0xff808D95);
+  static const headerTextColor = ColorTokens.tangaroa;
+  static const buttonBackgroundColor = ColorTokens.shamrockGreen;
+  static const darkCardColor = ColorTokens.arapawa;
+  static const buttonRippleColor = ColorTokens.lightGrey10;
+  static const buttonBorderedRippleColor =
+      ColorTokens.shamrockGreenRippleEffect;
+  static const buttonTransparentColor = Colors.transparent;
+  static const buttonDimmedColor = ColorTokens.shamrockGreenDimmed;
+  static const buttonDimmedTextColor = Color(0xffefefef);
+  static const subHeaderTextColor = ColorTokens.bismark;
+  static const shipmentInProgressColor = ColorTokens.brightSun;
+  static const darkBgColor = const Color(0xff1f1f1f);
+  static const drawerDarkBgColor = const Color(0xff1f1f1f);
+  static const cursorBubbleColor = ColorTokens.shamrockGreen;
+  static const cursorSelectionColor = const Color(0xff5d5c5c);
+  static const darkOnPrimaryColor = const Color(0xff1f1f1f);
+  static const lightBgColor = const Color(0xffF2F3F5);
+  static const secondaryDarkTextColor = const Color(0xff5d5c5c);
+  static const drawerLightBgColor = const Color(0xffe5e5e5);
+  static const secondaryLightTextColor = const Color(0xff5d5c5c);
+  static const Color backgroundColor = Color(0xffF2F3F5);
+  static const Color initialBorderColor = ColorTokens.quartz;
+  static const Color hintTextColor = ColorTokens.aluminum;
+  static const Color aluminumColor = ColorTokens.aluminum;
+  // static const Color homeTitleTextColor = Color(0xff19303E);
+  static const Color errorColor = ColorTokens.amaranth;
+  static const Color announcementTextColor = Color(0xff19303E);
+}
 
-  /*
-  static final darkTheme = ThemeData(
-    scaffoldBackgroundColor: const Color(0xFF0A1D10),
-    primaryColor: AppColor.black,
-    focusColor: const Color(0xFF0A1D10),
-    textTheme: const TextTheme(
-      titleLarge: TextStyle(
-          color: AppColor.mainColor,
-          fontSize: 30,
-          fontFamily: 'Comfortaa_Bold'),
-      titleMedium: TextStyle(
-          color: AppColor.white, fontSize: 16, fontFamily: 'Comfortaa_Bold'),
-      titleSmall: TextStyle(
-          color: AppColor.white, fontSize: 14, fontFamily: 'Comfortaa_Medium'),
-      displayLarge: TextStyle(
-          color: AppColor.white, fontSize: 16, fontFamily: 'Comfortaa_Bold'),
-      displaySmall: TextStyle(
-          color: AppColor.white,
-          fontSize: 12,
-          fontFamily: 'Comfortaa_SemiBold'),
-    ),
-    colorScheme: const ColorScheme(
-      background: AppColor.black,
-      brightness: Brightness.light,
-      primary: AppColor.mainColor,
-      onPrimary: AppColor.mainColor,
-      secondary: AppColor.mainColor,
-      onSecondary: AppColor.black,
-      error: AppColor.mainColor,
-      onPrimaryContainer: Color(0xFF0A1D10),
-      onBackground: AppColor.white,
-      onError: AppColor.mainColor,
-      surface: AppColor.white,
-      onSurface: AppColor.black,
-    ),
-  );
+class ColorTokens {
+  ColorTokens._();
 
-  static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: Colors.white,
-    primaryColor: AppColor.mainColor,
-    focusColor: AppColor.paymentCardColor,
-    textTheme: const TextTheme(
-      titleLarge: TextStyle(
-          color: AppColor.mainColor,
-          fontSize: 30,
-          fontFamily: 'Comfortaa_Bold'),
-      titleMedium: TextStyle(
-          color: AppColor.black, fontSize: 16, fontFamily: 'Comfortaa_Bold'),
-      titleSmall: TextStyle(
-          color: AppColor.black, fontSize: 14, fontFamily: 'Comfortaa_Medium'),
-      displayLarge: TextStyle(
-          color: AppColor.black, fontSize: 16, fontFamily: 'Comfortaa_Bold'),
-      displaySmall: TextStyle(
-          color: AppColor.black,
-          fontSize: 12,
-          fontFamily: 'Comfortaa_SemiBold'),
-    ),
-    colorScheme: const ColorScheme(
-      background: AppColor.white,
-      brightness: Brightness.light,
-      primary: AppColor.mainColor,
-      onPrimary: AppColor.mainColor,
-      secondary: AppColor.secondaryColor,
-      onSecondary: AppColor.white,
-      error: AppColor.mainColor,
-      onPrimaryContainer: AppColor.white,
-      onBackground: AppColor.mainColor,
-      onError: AppColor.mainColor,
-      surface: AppColor.black,
-      onSurface: AppColor.white,
-    ),
-  );
+  static const Color shamrockGreen = Color(0xff02955F);
+  static const Color shamrockGreenRippleEffect = Color(0x1702955f);
+  static const Color shamrockGreenDimmed = Color(0x5902955f);
+  static const Color tangaroa = Color(0xff19303E);
+  static const Color arapawa = Color(0xff2F4858);
+  static const Color brightSun = Color(0xffEFB630);
+  static const Color amaranth = Color(0xffEC2353);
 
-   */
+  static const Color blackPearl = Color(0xff19262E);
+  static const Color bismark = Color(0xff536672);
+  static const Color aluminum = Color(0xff808D95);
+  static const Color quartz = Color(0xffDEDEE4);
+  static const Color solitude = Color(0xffF2F3F5);
+  static const Color white = Color(0xffFFFFFF);
+  static const Color lightGrey10 = Color(0x74E5E5E5);
 }
